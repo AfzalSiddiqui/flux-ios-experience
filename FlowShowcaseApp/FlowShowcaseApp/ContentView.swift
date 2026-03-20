@@ -9,6 +9,7 @@ import SwiftUI
 
 // MARK: - App Theme State
 
+@MainActor
 final class AppThemeManager: ObservableObject {
     @Published var colorScheme: ColorScheme? = nil
     @Published var activeTheme: ThemeOption = .defaultTheme
@@ -126,6 +127,7 @@ private struct ExamplesTab: View {
 
 // MARK: - Login Flow
 
+@MainActor
 private class LoginViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
@@ -251,6 +253,7 @@ private struct DashboardItem: Identifiable {
     let color: UInt
 }
 
+@MainActor
 private class DashboardViewModel: ObservableObject {
     @Published var greeting = "Welcome back, Amal"
     @Published var balance = "$12,450.00"
@@ -347,6 +350,7 @@ private struct DashboardFlowExample: View {
 
 // MARK: - Payment Flow
 
+@MainActor
 private class PaymentViewModel: ObservableObject {
     @Published var amount = ""
     @Published var note = ""
