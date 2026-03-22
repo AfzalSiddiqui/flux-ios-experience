@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		042255B52F6FF2C7001E6C47 /* FluxComponentsKit in Frameworks */ = {isa = PBXBuildFile; productRef = 042255B42F6FF2C7001E6C47 /* FluxComponentsKit */; };
+		042255B82F6FF2DF001E6C47 /* FluxResourcesKit in Frameworks */ = {isa = PBXBuildFile; productRef = 042255B72F6FF2DF001E6C47 /* FluxResourcesKit */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		04FA20292F6D46B200F97164 /* FlowShowcaseApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlowShowcaseApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -23,6 +28,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				042255B82F6FF2DF001E6C47 /* FluxResourcesKit in Frameworks */,
+				042255B52F6FF2C7001E6C47 /* FluxComponentsKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +72,8 @@
 			);
 			name = FlowShowcaseApp;
 			packageProductDependencies = (
+				042255B42F6FF2C7001E6C47 /* FluxComponentsKit */,
+				042255B72F6FF2DF001E6C47 /* FluxResourcesKit */,
 			);
 			productName = FlowShowcaseApp;
 			productReference = 04FA20292F6D46B200F97164 /* FlowShowcaseApp.app */;
@@ -94,6 +103,10 @@
 			);
 			mainGroup = 04FA20202F6D46B200F97164;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				042255B32F6FF2C7001E6C47 /* XCLocalSwiftPackageReference "../../FluxComponentsKit" */,
+				042255B62F6FF2DF001E6C47 /* XCLocalSwiftPackageReference "../../FluxResourcesKit" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 04FA202A2F6D46B200F97164 /* Products */;
 			projectDirPath = "";
@@ -328,6 +341,28 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCLocalSwiftPackageReference section */
+		042255B32F6FF2C7001E6C47 /* XCLocalSwiftPackageReference "../../FluxComponentsKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../FluxComponentsKit;
+		};
+		042255B62F6FF2DF001E6C47 /* XCLocalSwiftPackageReference "../../FluxResourcesKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../FluxResourcesKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		042255B42F6FF2C7001E6C47 /* FluxComponentsKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FluxComponentsKit;
+		};
+		042255B72F6FF2DF001E6C47 /* FluxResourcesKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FluxResourcesKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 04FA20212F6D46B200F97164 /* Project object */;
 }
