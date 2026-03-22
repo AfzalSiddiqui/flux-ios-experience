@@ -3,19 +3,19 @@ import FluxComponentsKit
 
 struct FluxInfoViewShowcase: View {
     @StateObject private var horizontalVM = FluxInfoViewModel(
-        icon: "info.circle.fill", iconColor: FluxColors.primary,
+        icon: .system("info.circle.fill"), iconColor: FluxColors.primary,
         title: "Information", description: "This is a horizontal info view with an icon and description.", alignment: .horizontal
     )
     @StateObject private var verticalVM = FluxInfoViewModel(
-        icon: "star.fill", iconColor: FluxColors.warning,
+        icon: .system("star.fill"), iconColor: FluxColors.warning,
         title: "Featured", description: "This is a vertically aligned info view centered on the card.", alignment: .vertical
     )
     @StateObject private var successVM = FluxInfoViewModel(
-        icon: "checkmark.circle.fill", iconColor: FluxColors.success,
+        icon: .system("checkmark.circle.fill"), iconColor: FluxColors.success,
         title: "Success", description: "Your operation completed successfully.", alignment: .horizontal
     )
     @StateObject private var errorVM = FluxInfoViewModel(
-        icon: "xmark.circle.fill", iconColor: FluxColors.error,
+        icon: .system("xmark.circle.fill"), iconColor: FluxColors.error,
         title: "Error", description: "Something went wrong. Please try again.", alignment: .horizontal
     )
 

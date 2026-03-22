@@ -24,17 +24,17 @@ struct FluxHeaderShowcase: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: FluxSpacing.lg) {
-                Text("Title Only").font(FluxFont.headline)
+                FluxText("Title Only", style: .headline)
                 FluxHeader(viewModel: titleOnlyVM)
 
                 FluxDivider(viewModel: dividerVM)
 
-                Text("With Subtitle").font(FluxFont.headline)
+                FluxText("With Subtitle", style: .headline)
                 FluxHeader(viewModel: withSubtitleVM)
 
                 FluxDivider(viewModel: FluxDividerViewModel())
 
-                Text("With Actions").font(FluxFont.headline)
+                FluxText("With Actions", style: .headline)
                 FluxHeader(viewModel: actionsVM) {
                     FluxIcon(viewModel: backIconVM)
                 } trailingAction: {
@@ -43,7 +43,7 @@ struct FluxHeaderShowcase: View {
 
                 FluxDivider(viewModel: FluxDividerViewModel())
 
-                Text("In a Card (Molecule)").font(FluxFont.headline)
+                FluxText("In a Card (Molecule)", style: .headline)
                 FluxCard(viewModel: cardVM) {
                     FluxHeader(viewModel: profileVM) {
                         FluxIcon(viewModel: menuIconVM)
@@ -69,8 +69,8 @@ struct FluxHeaderShowcase: View {
 
     private var usageSection: some View {
         VStack(alignment: .leading, spacing: FluxSpacing.xs) {
-            Text("How to Use").font(FluxFont.headline)
-            Text("""
+            FluxText("How to Use", style: .headline)
+            FluxText("""
             // 1. Create the Organism ViewModel
             @StateObject var vm = FluxHeaderViewModel(
                 title: "Dashboard",
@@ -100,8 +100,7 @@ struct FluxHeaderShowcase: View {
             FluxCard(viewModel: cardVM) {
                 FluxHeader(viewModel: vm)
             }
-            """)
-            .font(.system(.caption, design: .monospaced))
+            """, style: .code)
             .padding(FluxSpacing.sm)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(FluxColors.surface)

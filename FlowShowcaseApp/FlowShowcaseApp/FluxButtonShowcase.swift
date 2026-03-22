@@ -24,9 +24,7 @@ struct FluxButtonShowcase: View {
             VStack(spacing: FluxSpacing.lg) {
                 // Tap counter feedback
                 if tapCount > 0 {
-                    Text("Tapped \(tapCount) time\(tapCount == 1 ? "" : "s")")
-                        .font(FluxFont.callout)
-                        .foregroundStyle(FluxColors.success)
+                    FluxText("Tapped \(tapCount) time\(tapCount == 1 ? "" : "s")", style: .callout, color: FluxColors.success)
                         .frame(maxWidth: .infinity)
                         .padding(FluxSpacing.sm)
                         .background(FluxColors.success.opacity(0.1))
@@ -62,9 +60,7 @@ struct FluxButtonShowcase: View {
         }
         .overlay(alignment: .bottom) {
             if let toast = toastMessage {
-                Text(toast)
-                    .font(FluxFont.footnote)
-                    .foregroundStyle(.white)
+                FluxText(toast, style: .footnote, color: .white)
                     .padding(.horizontal, FluxSpacing.md)
                     .padding(.vertical, FluxSpacing.sm)
                     .background(FluxColors.secondary.opacity(0.9))
@@ -106,8 +102,8 @@ struct FluxButtonShowcase: View {
 
     private var usageSection: some View {
         VStack(alignment: .leading, spacing: FluxSpacing.xs) {
-            Text("How to Use").font(FluxFont.headline)
-            Text("""
+            FluxText("How to Use", style: .headline)
+            FluxText("""
             // 1. Create the ViewModel
             @StateObject var vm = FluxButtonViewModel(
                 title: "Save",
@@ -123,8 +119,7 @@ struct FluxButtonShowcase: View {
             vm.isLoading = true
             vm.title = "Saving..."
             vm.isDisabled = true
-            """)
-            .font(.system(.caption, design: .monospaced))
+            """, style: .code)
             .padding(FluxSpacing.sm)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(FluxColors.surface)
@@ -134,7 +129,7 @@ struct FluxButtonShowcase: View {
 
     private func section<Content: View>(_ title: String, @ViewBuilder content: () -> Content) -> some View {
         VStack(alignment: .leading, spacing: FluxSpacing.sm) {
-            Text(title).font(FluxFont.headline)
+            FluxText(title, style: .headline)
             content()
         }
     }

@@ -15,23 +15,23 @@ struct FluxTextFieldShowcase: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: FluxSpacing.lg) {
-                Text("Default").font(FluxFont.headline)
+                FluxText("Default", style: .headline)
                 FluxTextField(viewModel: emailVM)
 
                 FluxDivider(viewModel: dividerVM)
 
-                Text("Secure").font(FluxFont.headline)
+                FluxText("Secure", style: .headline)
                 FluxTextField(viewModel: passwordVM)
 
                 FluxDivider(viewModel: FluxDividerViewModel())
 
-                Text("Error State").font(FluxFont.headline)
+                FluxText("Error State", style: .headline)
                 FluxTextField(viewModel: errorVM)
 
                 FluxDivider(viewModel: FluxDividerViewModel())
 
                 // Atom usage alongside molecule
-                Text("Atoms in Context").font(FluxFont.headline)
+                FluxText("Atoms in Context", style: .headline)
                 FluxText(viewModel: sectionTitleVM)
 
                 HStack(spacing: FluxSpacing.xs) {
@@ -48,8 +48,8 @@ struct FluxTextFieldShowcase: View {
 
     private var usageSection: some View {
         VStack(alignment: .leading, spacing: FluxSpacing.xs) {
-            Text("How to Use").font(FluxFont.headline)
-            Text("""
+            FluxText("How to Use", style: .headline)
+            FluxText("""
             // 1. Create the ViewModel
             @StateObject var vm = FluxTextFieldViewModel(
                 label: "Email",
@@ -71,8 +71,7 @@ struct FluxTextFieldShowcase: View {
                 placeholder: "Enter password",
                 isSecure: true
             )
-            """)
-            .font(.system(.caption, design: .monospaced))
+            """, style: .code)
             .padding(FluxSpacing.sm)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(FluxColors.surface)

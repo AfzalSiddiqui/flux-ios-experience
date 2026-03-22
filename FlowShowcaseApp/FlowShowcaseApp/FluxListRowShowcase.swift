@@ -2,11 +2,11 @@ import SwiftUI
 import FluxComponentsKit
 
 struct FluxListRowShowcase: View {
-    @StateObject private var profileVM = FluxListRowViewModel(icon: "person.fill", title: "Profile", subtitle: "View your profile")
-    @StateObject private var settingsVM = FluxListRowViewModel(icon: "gear", title: "Settings", subtitle: "App preferences")
-    @StateObject private var notificationsVM = FluxListRowViewModel(icon: "bell.fill", iconColor: FluxColors.warning, title: "Notifications", subtitle: "Manage alerts")
-    @StateObject private var versionVM = FluxListRowViewModel(icon: "info.circle", title: "Version 1.0.0", showChevron: false)
-    @StateObject private var actionVM = FluxListRowViewModel(icon: "arrow.right.circle.fill", iconColor: FluxColors.success, title: "Tap Me", subtitle: "This row has an action")
+    @StateObject private var profileVM = FluxListRowViewModel(icon: .system("person.fill"), title: "Profile", subtitle: "View your profile")
+    @StateObject private var settingsVM = FluxListRowViewModel(icon: .system("gear"), title: "Settings", subtitle: "App preferences")
+    @StateObject private var notificationsVM = FluxListRowViewModel(icon: .system("bell.fill"), iconColor: FluxColors.warning, title: "Notifications", subtitle: "Manage alerts")
+    @StateObject private var versionVM = FluxListRowViewModel(icon: .system("info.circle"), title: "Version 1.0.0", showChevron: false)
+    @StateObject private var actionVM = FluxListRowViewModel(icon: .system("arrow.right.circle.fill"), iconColor: FluxColors.success, title: "Tap Me", subtitle: "This row has an action")
 
     // Atoms for section context
     @StateObject private var dividerVM = FluxDividerViewModel()
@@ -25,11 +25,8 @@ struct FluxListRowShowcase: View {
                 // Last tapped feedback
                 if let lastTapped = lastTappedRow {
                     HStack(spacing: FluxSpacing.xs) {
-                        Image(systemName: "hand.tap.fill")
-                            .foregroundStyle(FluxColors.primary)
-                        Text("Last tapped: \(lastTapped)")
-                            .font(FluxFont.callout)
-                            .foregroundStyle(FluxColors.primary)
+                        FluxIcon("hand.tap.fill", size: .small, color: FluxColors.primary)
+                        FluxText("Last tapped: \(lastTapped)", style: .callout, color: FluxColors.primary)
                     }
                     .frame(maxWidth: .infinity)
                     .padding(FluxSpacing.sm)
@@ -37,7 +34,7 @@ struct FluxListRowShowcase: View {
                     .clipShape(RoundedRectangle(cornerRadius: FluxRadius.sm))
                 }
 
-                Text("With Icon & Subtitle").font(FluxFont.headline)
+                FluxText("With Icon & Subtitle", style: .headline)
                 VStack(spacing: 0) {
                     FluxListRow(viewModel: profileVM)
                     FluxDivider(viewModel: FluxDividerViewModel())
@@ -48,12 +45,12 @@ struct FluxListRowShowcase: View {
 
                 FluxDivider(viewModel: dividerVM)
 
-                Text("Without Chevron").font(FluxFont.headline)
+                FluxText("Without Chevron", style: .headline)
                 FluxListRow(viewModel: versionVM)
 
                 FluxDivider(viewModel: FluxDividerViewModel())
 
-                Text("With Action").font(FluxFont.headline)
+                FluxText("With Action", style: .headline)
                 FluxListRow(viewModel: actionVM)
 
                 FluxDivider(viewModel: FluxDividerViewModel())
@@ -76,9 +73,7 @@ struct FluxListRowShowcase: View {
         }
         .overlay(alignment: .bottom) {
             if let toast = toastMessage {
-                Text(toast)
-                    .font(FluxFont.footnote)
-                    .foregroundStyle(.white)
+                FluxText(toast, style: .footnote, color: .white)
                     .padding(.horizontal, FluxSpacing.md)
                     .padding(.vertical, FluxSpacing.sm)
                     .background(FluxColors.secondary.opacity(0.9))
@@ -123,8 +118,8 @@ struct FluxListRowShowcase: View {
 
     private var usageSection: some View {
         VStack(alignment: .leading, spacing: FluxSpacing.xs) {
-            Text("How to Use").font(FluxFont.headline)
-            Text("""
+            FluxText("How to Use", style: .headline)
+            FluxText("""
             // 1. Create the ViewModel
             @StateObject var vm = FluxListRowViewModel(
                 icon: "person.fill",
@@ -144,8 +139,7 @@ struct FluxListRowShowcase: View {
                 title: "Version 1.0",
                 showChevron: false
             )
-            """)
-            .font(.system(.caption, design: .monospaced))
+            """, style: .code)
             .padding(FluxSpacing.sm)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(FluxColors.surface)

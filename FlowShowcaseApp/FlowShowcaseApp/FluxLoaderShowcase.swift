@@ -13,23 +13,23 @@ struct FluxLoaderShowcase: View {
     var body: some View {
         ScrollView {
             VStack(spacing: FluxSpacing.xl) {
-                Text("Sizes").font(FluxFont.headline)
+                FluxText("Sizes", style: .headline)
                 HStack(spacing: FluxSpacing.xxl) {
                     VStack(spacing: FluxSpacing.sm) {
                         FluxLoader(viewModel: smallVM)
-                        Text("Small").font(FluxFont.caption).foregroundStyle(FluxColors.textSecondary)
+                        FluxText("Small", style: .caption)
                     }
                     VStack(spacing: FluxSpacing.sm) {
                         FluxLoader(viewModel: mediumVM)
-                        Text("Medium").font(FluxFont.caption).foregroundStyle(FluxColors.textSecondary)
+                        FluxText("Medium", style: .caption)
                     }
                     VStack(spacing: FluxSpacing.sm) {
                         FluxLoader(viewModel: largeVM)
-                        Text("Large").font(FluxFont.caption).foregroundStyle(FluxColors.textSecondary)
+                        FluxText("Large", style: .caption)
                     }
                 }
 
-                Text("Tint Colors").font(FluxFont.headline)
+                FluxText("Tint Colors", style: .headline)
                 HStack(spacing: FluxSpacing.xxl) {
                     FluxLoader(viewModel: primaryTintVM)
                     FluxLoader(viewModel: successTintVM)
@@ -44,8 +44,8 @@ struct FluxLoaderShowcase: View {
 
     private var usageSection: some View {
         VStack(alignment: .leading, spacing: FluxSpacing.xs) {
-            Text("How to Use").font(FluxFont.headline)
-            Text("""
+            FluxText("How to Use", style: .headline)
+            FluxText("""
             // 1. Create the ViewModel
             @StateObject var vm = FluxLoaderViewModel(
                 size: .medium,
@@ -58,8 +58,7 @@ struct FluxLoaderShowcase: View {
             // 3. Update dynamically
             vm.size = .large
             vm.tint = FluxColors.success
-            """)
-            .font(.system(.caption, design: .monospaced))
+            """, style: .code)
             .padding(FluxSpacing.sm)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(FluxColors.surface)

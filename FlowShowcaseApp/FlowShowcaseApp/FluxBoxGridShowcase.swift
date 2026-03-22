@@ -4,25 +4,25 @@ import FluxComponentsKit
 struct FluxBoxGridShowcase: View {
     @StateObject private var threeColVM = FluxBoxGridViewModel(
         items: [
-            FluxBoxGridItem(icon: "house.fill", label: "Home", color: FluxColors.primary),
-            FluxBoxGridItem(icon: "heart.fill", label: "Health", color: FluxColors.error),
-            FluxBoxGridItem(icon: "cart.fill", label: "Shop", color: FluxColors.success),
-            FluxBoxGridItem(icon: "book.fill", label: "Learn", color: FluxColors.warning),
-            FluxBoxGridItem(icon: "gamecontroller.fill", label: "Games", color: FluxColors.accent),
-            FluxBoxGridItem(icon: "music.note", label: "Music", color: FluxColors.primary)
+            FluxBoxGridItem(icon: .system("house.fill"), label: "Home", color: FluxColors.primary),
+            FluxBoxGridItem(icon: .system("heart.fill"), label: "Health", color: FluxColors.error),
+            FluxBoxGridItem(icon: .system("cart.fill"), label: "Shop", color: FluxColors.success),
+            FluxBoxGridItem(icon: .system("book.fill"), label: "Learn", color: FluxColors.warning),
+            FluxBoxGridItem(icon: .system("gamecontroller.fill"), label: "Games", color: FluxColors.accent),
+            FluxBoxGridItem(icon: .system("music.note"), label: "Music", color: FluxColors.primary)
         ],
         columns: 3, selectionMode: .single, selectedIndices: [0], itemSize: .medium
     )
     @StateObject private var fourColVM = FluxBoxGridViewModel(
         items: [
-            FluxBoxGridItem(icon: "sun.max.fill", label: "Sun"),
-            FluxBoxGridItem(icon: "moon.fill", label: "Moon"),
-            FluxBoxGridItem(icon: "cloud.fill", label: "Cloud"),
-            FluxBoxGridItem(icon: "bolt.fill", label: "Storm"),
-            FluxBoxGridItem(icon: "snow", label: "Snow"),
-            FluxBoxGridItem(icon: "wind", label: "Wind"),
-            FluxBoxGridItem(icon: "drop.fill", label: "Rain"),
-            FluxBoxGridItem(icon: "thermometer.medium", label: "Temp")
+            FluxBoxGridItem(icon: .system("sun.max.fill"), label: "Sun"),
+            FluxBoxGridItem(icon: .system("moon.fill"), label: "Moon"),
+            FluxBoxGridItem(icon: .system("cloud.fill"), label: "Cloud"),
+            FluxBoxGridItem(icon: .system("bolt.fill"), label: "Storm"),
+            FluxBoxGridItem(icon: .system("snow"), label: "Snow"),
+            FluxBoxGridItem(icon: .system("wind"), label: "Wind"),
+            FluxBoxGridItem(icon: .system("drop.fill"), label: "Rain"),
+            FluxBoxGridItem(icon: .system("thermometer.medium"), label: "Temp")
         ],
         columns: 4, selectionMode: .multi, itemSize: .small
     )

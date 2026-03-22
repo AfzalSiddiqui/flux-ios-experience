@@ -9,18 +9,18 @@ struct FluxDividerShowcase: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: FluxSpacing.lg) {
-                Text("Horizontal").font(FluxFont.headline)
+                FluxText("Horizontal", style: .headline)
                 FluxDivider(viewModel: horizontalVM)
 
-                Text("Custom Color").font(FluxFont.headline)
+                FluxText("Custom Color", style: .headline)
                 FluxDivider(viewModel: coloredVM)
 
-                Text("Vertical").font(FluxFont.headline)
+                FluxText("Vertical", style: .headline)
                 HStack(spacing: FluxSpacing.md) {
-                    Text("Left").font(FluxFont.body)
+                    FluxText("Left", style: .body)
                     FluxDivider(viewModel: verticalVM)
                         .frame(height: 40)
-                    Text("Right").font(FluxFont.body)
+                    FluxText("Right", style: .body)
                 }
                 usageSection
             }
@@ -31,8 +31,8 @@ struct FluxDividerShowcase: View {
 
     private var usageSection: some View {
         VStack(alignment: .leading, spacing: FluxSpacing.xs) {
-            Text("How to Use").font(FluxFont.headline)
-            Text("""
+            FluxText("How to Use", style: .headline)
+            FluxText("""
             // Horizontal divider (default)
             @StateObject var vm = FluxDividerViewModel()
             FluxDivider(viewModel: vm)
@@ -49,8 +49,7 @@ struct FluxDividerShowcase: View {
                 color: FluxColors.primary
             )
             FluxDivider(viewModel: cVM)
-            """)
-            .font(.system(.caption, design: .monospaced))
+            """, style: .code)
             .padding(FluxSpacing.sm)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(FluxColors.surface)

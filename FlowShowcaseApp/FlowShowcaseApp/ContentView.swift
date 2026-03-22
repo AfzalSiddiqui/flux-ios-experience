@@ -101,6 +101,7 @@ private struct CatalogTab: View {
                     NavigationLink("FluxAttributedText") { FluxAttributedTextShowcase() }
                     NavigationLink("FluxSegmentedControl") { FluxSegmentedControlShowcase() }
                     NavigationLink("FluxImage") { FluxImageShowcase() }
+                    NavigationLink("FluxShimmer") { FluxShimmerShowcase() }
                 }
                 Section("Molecules") {
                     NavigationLink("FluxTextField") { FluxTextFieldShowcase() }

@@ -2,9 +2,9 @@ import SwiftUI
 import FluxComponentsKit
 
 struct FluxExpandableViewShowcase: View {
-    @StateObject private var cardVM = FluxExpandableViewModel(title: "Card Style", icon: "creditcard.fill", style: .card)
-    @StateObject private var plainVM = FluxExpandableViewModel(title: "Plain Style", icon: "doc.text", style: .plain)
-    @StateObject private var borderedVM = FluxExpandableViewModel(title: "Bordered Style", icon: "square.dashed", style: .bordered)
+    @StateObject private var cardVM = FluxExpandableViewModel(title: "Card Style", icon: .system("creditcard.fill"), style: .card)
+    @StateObject private var plainVM = FluxExpandableViewModel(title: "Plain Style", icon: .system("doc.text"), style: .plain)
+    @StateObject private var borderedVM = FluxExpandableViewModel(title: "Bordered Style", icon: .system("square.dashed"), style: .bordered)
 
     @State private var toastMessage: String?
 

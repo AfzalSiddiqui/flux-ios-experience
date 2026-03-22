@@ -16,23 +16,23 @@ struct FluxIconShowcase: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: FluxSpacing.lg) {
-                Text("Sizes").font(FluxFont.headline)
+                FluxText("Sizes", style: .headline)
                 HStack(spacing: FluxSpacing.xl) {
                     VStack(spacing: FluxSpacing.xs) {
                         FluxIcon(viewModel: smallVM)
-                        Text("Small").font(FluxFont.caption)
+                        FluxText("Small", style: .caption)
                     }
                     VStack(spacing: FluxSpacing.xs) {
                         FluxIcon(viewModel: mediumVM)
-                        Text("Medium").font(FluxFont.caption)
+                        FluxText("Medium", style: .caption)
                     }
                     VStack(spacing: FluxSpacing.xs) {
                         FluxIcon(viewModel: largeVM)
-                        Text("Large").font(FluxFont.caption)
+                        FluxText("Large", style: .caption)
                     }
                 }
 
-                Text("Gallery").font(FluxFont.headline)
+                FluxText("Gallery", style: .headline)
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 72))], spacing: FluxSpacing.md) {
                     iconTile(heartVM, label: "heart.fill")
                     iconTile(bellVM, label: "bell.fill")
@@ -40,6 +40,14 @@ struct FluxIconShowcase: View {
                     iconTile(personVM, label: "person.fill")
                     iconTile(houseVM, label: "house.fill")
                     iconTile(checkVM, label: "checkmark")
+                }
+
+                FluxText("URL Icon", style: .headline)
+                HStack(spacing: FluxSpacing.xl) {
+                    VStack(spacing: FluxSpacing.xs) {
+                        FluxIcon(url: URL(string: "https://picsum.photos/64")!, size: .large)
+                        FluxText("URL", style: .caption)
+                    }
                 }
 
                 usageSection
@@ -51,8 +59,8 @@ struct FluxIconShowcase: View {
 
     private var usageSection: some View {
         VStack(alignment: .leading, spacing: FluxSpacing.xs) {
-            Text("How to Use").font(FluxFont.headline)
-            Text("""
+            FluxText("How to Use", style: .headline)
+            FluxText("""
             // 1. Create the ViewModel
             @StateObject var vm = FluxIconViewModel(
                 systemName: "star.fill",
@@ -66,8 +74,7 @@ struct FluxIconShowcase: View {
             // 3. Update dynamically
             vm.systemName = "heart.fill"
             vm.color = FluxColors.error
-            """)
-            .font(.system(.caption, design: .monospaced))
+            """, style: .code)
             .padding(FluxSpacing.sm)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(FluxColors.surface)
@@ -78,7 +85,7 @@ struct FluxIconShowcase: View {
     private func iconTile(_ vm: FluxIconViewModel, label: String) -> some View {
         VStack(spacing: FluxSpacing.xs) {
             FluxIcon(viewModel: vm)
-            Text(label).font(FluxFont.caption).foregroundStyle(FluxColors.textSecondary)
+            FluxText(label, style: .caption)
         }
     }
 }

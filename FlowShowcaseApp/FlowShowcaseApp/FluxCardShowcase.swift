@@ -20,7 +20,7 @@ struct FluxCardShowcase: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: FluxSpacing.lg) {
-                Text("Small Shadow").font(FluxFont.headline)
+                FluxText("Small Shadow", style: .headline)
                 FluxCard(viewModel: smallShadowVM) {
                     VStack(alignment: .leading, spacing: FluxSpacing.xs) {
                         FluxText(viewModel: titleVM)
@@ -28,7 +28,7 @@ struct FluxCardShowcase: View {
                     }
                 }
 
-                Text("Medium Shadow").font(FluxFont.headline)
+                FluxText("Medium Shadow", style: .headline)
                 FluxCard(viewModel: mediumShadowVM) {
                     HStack(spacing: FluxSpacing.sm) {
                         FluxIcon(viewModel: cardIconVM)
@@ -39,7 +39,7 @@ struct FluxCardShowcase: View {
                     }
                 }
 
-                Text("Custom Styling").font(FluxFont.headline)
+                FluxText("Custom Styling", style: .headline)
                 FluxCard(viewModel: customVM) {
                     HStack(spacing: FluxSpacing.sm) {
                         FluxIcon(viewModel: starVM)
@@ -58,8 +58,8 @@ struct FluxCardShowcase: View {
 
     private var usageSection: some View {
         VStack(alignment: .leading, spacing: FluxSpacing.xs) {
-            Text("How to Use").font(FluxFont.headline)
-            Text("""
+            FluxText("How to Use", style: .headline)
+            FluxText("""
             // 1. Create the ViewModel
             @StateObject var vm = FluxCardViewModel(
                 padding: FluxSpacing.md,
@@ -77,8 +77,7 @@ struct FluxCardShowcase: View {
             // 3. Update dynamically
             vm.shadow = .large
             vm.cornerRadius = FluxRadius.xl
-            """)
-            .font(.system(.caption, design: .monospaced))
+            """, style: .code)
             .padding(FluxSpacing.sm)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(FluxColors.surface)

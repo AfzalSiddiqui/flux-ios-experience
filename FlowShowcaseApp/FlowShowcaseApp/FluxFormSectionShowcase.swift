@@ -60,8 +60,8 @@ struct FluxFormSectionShowcase: View {
 
     private var usageSection: some View {
         VStack(alignment: .leading, spacing: FluxSpacing.xs) {
-            Text("How to Use").font(FluxFont.headline)
-            Text("""
+            FluxText("How to Use", style: .headline)
+            FluxText("""
             // 1. Create the Organism ViewModel
             @StateObject var sectionVM =
                 FluxFormSectionViewModel(
@@ -90,8 +90,7 @@ struct FluxFormSectionShowcase: View {
             // 4. Read values
             print(nameVM.text)
             print(emailVM.text)
-            """)
-            .font(.system(.caption, design: .monospaced))
+            """, style: .code)
             .padding(FluxSpacing.sm)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(FluxColors.surface)

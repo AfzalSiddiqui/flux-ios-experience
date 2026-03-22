@@ -3,7 +3,7 @@ import FluxComponentsKit
 
 struct FluxFlapViewShowcase: View {
     @StateObject private var underlinedVM = FluxFlapViewModel(
-        tabs: [FluxFlapTab(title: "Home", icon: "house.fill"), FluxFlapTab(title: "Search", icon: "magnifyingglass"), FluxFlapTab(title: "Profile", icon: "person.fill")],
+        tabs: [FluxFlapTab(title: "Home", icon: .system("house.fill")), FluxFlapTab(title: "Search", icon: .system("magnifyingglass")), FluxFlapTab(title: "Profile", icon: .system("person.fill"))],
         style: .underlined
     )
     @StateObject private var filledVM = FluxFlapViewModel(

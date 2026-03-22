@@ -17,7 +17,7 @@ struct FluxTextShowcase: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: FluxSpacing.sm) {
-                Text("All Styles").font(FluxFont.headline)
+                FluxText("All Styles", style: .headline)
 
                 FluxText(viewModel: largeTitleVM)
                 FluxText(viewModel: titleVM)
@@ -31,7 +31,7 @@ struct FluxTextShowcase: View {
                 FluxText(viewModel: captionVM)
 
                 Spacer().frame(height: FluxSpacing.md)
-                Text("Custom Color").font(FluxFont.headline)
+                FluxText("Custom Color", style: .headline)
                 FluxText(viewModel: customColorVM)
 
                 Spacer().frame(height: FluxSpacing.md)
@@ -45,8 +45,8 @@ struct FluxTextShowcase: View {
 
     private var usageSection: some View {
         VStack(alignment: .leading, spacing: FluxSpacing.xs) {
-            Text("How to Use").font(FluxFont.headline)
-            Text("""
+            FluxText("How to Use", style: .headline)
+            FluxText("""
             // 1. Create the ViewModel
             @StateObject var vm = FluxTextViewModel(
                 content: "Hello World",
@@ -60,8 +60,7 @@ struct FluxTextShowcase: View {
             // 3. Update dynamically
             vm.content = "Updated!"
             vm.style = .title
-            """)
-            .font(.system(.caption, design: .monospaced))
+            """, style: .code)
             .padding(FluxSpacing.sm)
             .frame(maxWidth: .infinity, alignment: .leading)
             .background(FluxColors.surface)
