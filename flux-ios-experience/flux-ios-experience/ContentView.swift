@@ -1,6 +1,6 @@
 //
 //  ContentView.swift
-//  FlowShowcaseApp
+//  flux-ios-experience
 //
 //  Created by Amal on 20/03/2026.
 //
@@ -90,20 +90,37 @@ private struct CatalogTab: View {
                     NavigationLink("Shadows") { TokenShadowsView() }
                 }
                 Section("Atoms") {
-                    NavigationLink("FluxButton") { ButtonShowcase() }
-                    NavigationLink("FluxText") { TextShowcase() }
-                    NavigationLink("FluxIcon") { IconShowcase() }
-                    NavigationLink("FluxDivider") { DividerShowcase() }
-                    NavigationLink("FluxLoader") { LoaderShowcase() }
+                    NavigationLink("FluxButton") { FluxButtonShowcase() }
+                    NavigationLink("FluxText") { FluxTextShowcase() }
+                    NavigationLink("FluxIcon") { FluxIconShowcase() }
+                    NavigationLink("FluxDivider") { FluxDividerShowcase() }
+                    NavigationLink("FluxLoader") { FluxLoaderShowcase() }
+                    NavigationLink("FluxToggle") { FluxToggleShowcase() }
+                    NavigationLink("FluxRadioButton") { FluxRadioButtonShowcase() }
+                    NavigationLink("FluxCheckBox") { FluxCheckBoxShowcase() }
+                    NavigationLink("FluxAttributedText") { FluxAttributedTextShowcase() }
+                    NavigationLink("FluxSegmentedControl") { FluxSegmentedControlShowcase() }
+                    NavigationLink("FluxImage") { FluxImageShowcase() }
+                    NavigationLink("FluxShimmer") { FluxShimmerShowcase() }
                 }
                 Section("Molecules") {
-                    NavigationLink("FluxTextField") { TextFieldShowcase() }
-                    NavigationLink("FluxCard") { CardShowcase() }
-                    NavigationLink("FluxListRow") { ListRowShowcase() }
+                    NavigationLink("FluxTextField") { FluxTextFieldShowcase() }
+                    NavigationLink("FluxCard") { FluxCardShowcase() }
+                    NavigationLink("FluxListRow") { FluxListRowShowcase() }
+                    NavigationLink("FluxInfoView") { FluxInfoViewShowcase() }
+                    NavigationLink("FluxAlertView") { FluxAlertViewShowcase() }
+                    NavigationLink("FluxExpandableView") { FluxExpandableViewShowcase() }
+                    NavigationLink("FluxOptionCard") { FluxOptionCardShowcase() }
+                    NavigationLink("FluxBoxGrid") { FluxBoxGridShowcase() }
+                    NavigationLink("FluxFlapView") { FluxFlapViewShowcase() }
+                    NavigationLink("FluxCardFlap") { FluxCardFlapShowcase() }
                 }
                 Section("Organisms") {
-                    NavigationLink("FluxFormSection") { FormSectionShowcase() }
-                    NavigationLink("FluxHeader") { HeaderShowcase() }
+                    NavigationLink("FluxFormSection") { FluxFormSectionShowcase() }
+                    NavigationLink("FluxHeader") { FluxHeaderShowcase() }
+                    NavigationLink("FluxGraph") { FluxGraphShowcase() }
+                    NavigationLink("FluxBottomSheet") { FluxBottomSheetShowcase() }
+                    NavigationLink("FluxWebView") { FluxWebViewShowcase() }
                 }
             }
             .navigationTitle("Component Catalog")
